@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="width-device-width, initial-scale=1.0">
+    <title>Music Player</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"><!--biblioteca de box icon que sera utilizado--> 
+</head>
+<body>
+    <div id="menu"><!--menu Navbar-->
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>Songs</li>
+                <li>Artists</li>
+                <li>Music Labels</li>
+                <li>News</li>
+            </ul>
+        </nav>
+    </div>
+    <div class="player">
+
+        <div class="logo"><!--logo-->
+          <i class='bx bx-music'></i>
+        </div>
+        
+        <span id="musicName"></span><!--nome da musica--> 
+        
+        <audio id="player" src=""></audio><!--vai conter a musica atual--> 
+        <div class="controls">
+          <button id="prevButton"><i class='bx bx-skip-previous'></i></button><!--botão para voltar--> 
+          <button id="playPauseButton"><i class='bx bx-caret-right'></i></button><!--botão para pausar--> 
+          <button id="nextButton"><i class='bx bx-skip-next'></i></button><!--botão para passar--> 
+        </div>
+        <div class="footer">
+          <div class="progress-bar">
+            <div class="progress"></div>
+          </div>
+          <div class="time"><!--irá conter o tempo das musicas--> 
+            <span id="currentTime">0:00</span>
+            <span id="duration">0:00</span>
+          </div>
+        </div>
+      </div>
+      <script type="module" src="js/script.js"></script>
+</body>
+</html>
