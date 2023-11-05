@@ -5,47 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="width-device-width, initial-scale=1.0">
     <title>Music Player</title>
-
     <link rel="stylesheet" href="css/style.css">
-
+    <script type="module" src="js/script.js"></script>
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"><!--biblioteca de box icon que sera utilizado--> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <div id="menu"><!--menu Navbar-->
-        <nav>
-            <ul>
-                <li>Home</li>
-                <li>Songs</li>
-                <li>Artists</li>
-                <li>Music Labels</li>
-                <li>News</li>
-            </ul>
-        </nav>
-    </div>
-    <div class="player">
+  <div class="player">
+    <div class="wrapper">
+      <div class="details">
+        <div class="tocando-agora">Tocando</div>
+        <div class="arte-musica"></div>
+        <div class="nome-faixa">Nome da musica</div>
+        <div class="artista-faixa">Nome do artista</div>
+      </div>
 
-        <div class="logo"><!--logo-->
-          <i class='bx bx-music'></i>
+      <div class="slider_container">
+        <div class="tempo-atual">00:00</div>
+        <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
+        <div class="duracao-total">00:00</div>
+      </div>
+
+      <div class="slider_container">
+        <i class="fa fa-volume-down"></i>
+        <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
+        <i class="fa fa-volume-up"></i>
+      </div>
+
+      <div class="buttons">
+        <div class="faixa-aleatoria" onclick="randomtrack()">
+          <i class="fas fa-random fa-2x" title="random"></i>
         </div>
-        
-        <span id="musicName"></span><!--nome da musica--> 
-        
-        <audio id="player" src=""></audio><!--vai conter a musica atual--> 
-        <div class="controls">
-          <button id="prevButton"><i class='bx bx-skip-previous'></i></button><!--botão para voltar--> 
-          <button id="playPauseButton"><i class='bx bx-caret-right'></i></button><!--botão para pausar--> 
-          <button id="nextButton"><i class='bx bx-skip-next'></i></button><!--botão para passar--> 
+        <div class="faixa-anterior" onclick="prevTrack()">
+          <i class="fa fa-step-backward fa-2x"></i>
         </div>
-        <div class="footer">
-          <div class="progress-bar">
-            <div class="progress"></div>
-          </div>
-          <div class="time"><!--irá conter o tempo das musicas--> 
-            <span id="currentTime">0:00</span>
-            <span id="duration">0:00</span>
-          </div>
+        <div class="pausa-faixa" onclick="playpauseTrack()">
+          <i class="fa fa-play-circle fa-2x" ></i>
+        </div>
+        <div class="proxima-faixa" onclick="nextTrack()">
+          <i class="fas fa-random fa-2x"></i>
+        </div>
+        <div class="repete-faixa" onclick="repeatTrack()">
+          <i class="fa fa-repeat fa-2x" title="repeat"></i>
         </div>
       </div>
-      <script type="module" src="js/script.js"></script>
+      <div id="wave">
+        <span class="stroke"></span>
+        <span class="stroke"></span>
+        <span class="stroke"></span>
+        <span class="stroke"></span>
+        <span class="stroke"></span>
+        <span class="stroke"></span>
+        <span class="stroke"></span>
+        <span class="stroke"></span>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

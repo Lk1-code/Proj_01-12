@@ -7,6 +7,9 @@ const currentTime = document.querySelector("#currentTime");
 const duration = document.querySelector("#duration");
 const progressBar = document.querySelector(".progress-bar");
 const progress = document.querySelector(".progress");
+const players = document.querySelectorAll('audio')
+const volumeControl = document.getElementById('.vol-control')
+let globalVolume = 1
 
 import songs from "./songs.js";
 
@@ -29,6 +32,8 @@ const playPause = () => {
     playPauseButton.innerHTML = textButtonPlay;
   }
 };
+
+
 
 player.ontimeupdate = () => updateTime();
 
@@ -72,4 +77,11 @@ const prevNextMusic = (type = "next") => {
   updateTime();
 };
 
+volumeControl.addEventListener("change", function() {
+    globalVolume = volumeControl.value / 100;
+  
+    players.forEach(function(player) {
+      player.volume = globalVolume;
+    });
+  });
 prevNextMusic("init");

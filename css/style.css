@@ -1,98 +1,206 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  #menu{
-    width: 100%;
-  }
-  body {
-    display: inline-block;
-    height: 100vh;
-    align-items: center;
-    justify-content: center;
-    font-family: sans-serif;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(to right,#353935, darkred);
+  font-weight: bold;
+  color: white;
   }
   
-  .player {
-    display: inline-flex;
+  .player{
+    height: 95vh;
+    display: flex;
     align-items: center;
-    justify-content: space-around;
     flex-direction: column;
-    max-width: 400px;
-    width: 100%;
-    height: 500px;
-    margin: 0 10px;
-    box-shadow: 0 1px 10px gray;
-    padding: 10px;
-    border-radius: 5px;
-  }
-  
-  .logo {
-    background-color: #f7f7f7;
-    width: 100%;
-    height: 50%;
-    display: flex;
-    align-items: center;
     justify-content: center;
-    border-radius: 5px;
+}
+  .wrapper{
+    border: 1px solid transparent;
+    padding: 30px;
+    border-radius: 20px;
+    background-color: #28282B;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
   }
   
-  .logo i {
-    font-size: 200px;
+  .details {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   }
   
-  #musicName {
-    white-space: nowrap; 
-    width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-size: 30px;
+  .arte-musica {
+  margin: 25px;
+  height: 250px;
+  width: 250px;
+  border:2px solid 	#FFFAFA;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  -moz-box-shadow: 0px 6px 5px black;
+  -webkit-box-shadow: 0px 6px 5px black;
+  box-shadow: 0px 6px 5px black;
+  -moz-border-radius:190px;
+  -webkit-border-radius:190px;
+  border-radius:190px;
   }
   
-  .controls button {
-    border: none;
-    background-color: white;
-    cursor: pointer;
+  .tocando-agora {
+  font-size: 1rem;
   }
   
-  .controls i {
-    font-size: 60px;
-    padding: 5px;
-    border-radius: 50%;
-    background-color: #f7f7f7;
-    transition: all .2s;
+  .nome-faixa {
+  font-size: 2.5rem;
   }
   
-  .controls i:hover {
-    background-color: lightgray;
+  .artista-faixa {
+  margin-top: 5px;
+  font-size: 1.5rem;
   }
   
-  .time {
+  .buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 30px;
+  }
+  .active{
+      color: black;
+  }
+  
+  .repete-faixa,
+  .faixa-aleatoria,
+  .pausa-faixa,
+  .faixa-anterior,
+  .proxima-faixa {
+  padding: 25px;
+  opacity: 0.8;
+  transition: opacity .2s;
+  }
+  
+  .repete-faixa:hover,
+  .faixa-aleatoria:hover,
+  .pausa-faixa:hover,
+  .faixa-anterior:hover,
+  .proxima-faixa:hover {
+  opacity: 1.0;
+  }
+  
+  .slider_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+  
+  .seek_slider, .volume_slider {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 5px;
+  background: #83A9FF;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  }
+  
+  .seek_slider::-webkit-slider-thumb,
+  .volume_slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: white;
+  border: 3px solid #3774FF;
+  cursor: grab;
+  border-radius: 100%;
+  }
+  
+  .seek_slider:hover,
+  .volume_slider:hover {
+  opacity: 1.0;
+  }
+  
+  .seek_slider {
+  width: 60%;
+  }
+  
+  .volume_slider {
+  width: 30%;
+  }
+  
+  .tempo-atual,
+  .duracao-total {
+  padding: 10px;
+  }
+  
+  i.fa-volume-down,
+  i.fa-volume-up {
+  padding: 10px;
+  }
+  
+  i,
+  i.fa-play-circle,
+  i.fa-pause-circle,
+  i.fa-step-forward,
+  i.fa-step-backward,
+  p {
+  cursor: pointer;
+  }
+  .randomActive{
+      color: black;
+  }
+  .rotate {
+      animation: rotation 8s infinite linear;
+  }
+  @keyframes rotation {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(359deg);
+      }
+  }
+  .loader {
+    height: 70px;
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
   }
-  
-  .time span {
-    font-size: 22px;
-    color: #333;
+  .loader .stroke{
+      background: #f1f1f1;
+      height: 150%;
+      width: 10px;
+      border-radius: 50px;
+      margin: 0 5px;
+      animation: animate 1.4s linear infinite;
   }
+    @keyframes animate {
+      50% {
+        height: 20%;
+        background: #4286f4;
+      }
   
-  .footer {
-    width: 100%;
+      100% {
+        background: #4286f4;
+        height: 100%;
+      }
+    }
+    .stroke:nth-child(1){
+        animation-delay: 0s;
+    }
+    .stroke:nth-child(2){
+      animation-delay: 0.3s;
   }
-  
-  .progress-bar {
-    height: 8px;
-    background-color: #ddd;
-    cursor: pointer;
-    margin-bottom: 5px;
-    border-radius: 5px;
+  .stroke:nth-child(3){
+      animation-delay: 0.6s;
   }
-  
-  .progress {
-    height: 8px;
-    background-color: #333;
-    border-radius: 5px;
+  .stroke:nth-child(4){
+      animation-delay: 0.9s;
+  }
+  .stroke:nth-child(5){
+      animation-delay: 0.6s;
+  }
+  .stroke:nth-child(6){
+      animation-delay: 0.3s;
+  }
+  .stroke:nth-child(7){
+      animation-delay: 0s;
   }
