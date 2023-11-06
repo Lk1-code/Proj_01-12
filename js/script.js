@@ -8,7 +8,7 @@ let prox_btn = document.querySelector('.proxima-faixa');
 let anterior_btn = document.querySelector('.faixa-anterior');
 
 let seek_slider = document.querySelector('.seek_slider');
-let volume_slider = document.querySelector('volume_slider');
+let volume_slider = document.querySelector('.volume_slider');
 let curr_time = document.querySelector('.tempo-atual');
 let total_duration = document.querySelector('.duracao-total');
 let wave = document.getElementById('wave');
