@@ -1,19 +1,19 @@
-const tocando_agora = document.querySelector('.tocando-agora');
-const arte_musica = document.querySelector('.arte-musica');
-const nome_faixa = document.querySelector('.nome-faixa');
-const artista_faixa = document.querySelector('.artista-faixa');
+let tocando_agora = document.querySelector('.tocando-agora');
+let arte_musica = document.querySelector('.arte-musica');
+let nome_faixa = document.querySelector('.nome-faixa');
+let artista_faixa = document.querySelector('.artista-faixa');
 
-const playpause_btn = document.querySelector('.playpause-track');
-const prox_btn = document.querySelector('.proxima-faixa');
-const anterior_btn = document.querySelector('.faixa-anterior');
+let playpause_btn = document.querySelector('.playpause-track');
+let prox_btn = document.querySelector('.proxima-faixa');
+let anterior_btn = document.querySelector('.faixa-anterior');
 
 let seek_slider = document.querySelector('.seek_slider');
-const volume_slider = document.querySelector('volume_slider');
-const tempo_atual = document.querySelector('.tempo-atual');
-const dur_total = document.querySelector('.duracao-total');
-const wave = document.getElementById('wave');
-const randomIcon = document.querySelector('.fa-random');
-const curr_track = document.createElement('audio');
+let volume_slider = document.querySelector('volume_slider');
+let curr_time = document.querySelector('.tempo-atual');
+let total_duration = document.querySelector('.duracao-total');
+let wave = document.getElementById('wave');
+let randomIcon = document.querySelector('.fa-random');
+let curr_track = document.createElement('audio');
 
 let track_index = 0;
 let isPlaying = false;
@@ -61,8 +61,8 @@ const lista_musica = [
 
   }
 function reset(){
-    tempo_atual.textContent = "00:00";
-    dur_total.textContent = "00:00";
+    curr_time.textContent = "00:00";
+    total_duration.textContent = "00:00";
     seek_slider.value = 0;
 }
 function faixaAleatoria(){
@@ -126,7 +126,7 @@ function prevTrack(){
 }
 function seekTo(){
     let seekto = curr_track.duration * (seek_slider.value / 100);
-    curr_track.tempo_atual = seekto;
+    curr_track.currentTime = seekto;
 }
 function setVolume(){
     curr_track.volume = volume_slider.value / 100;
@@ -134,7 +134,7 @@ function setVolume(){
 function setUpdate(){
     let seekPosition = 0;
     if(!isNaN(curr_track.duration)){
-        seekPosition = curr_track.dur_total * (100 / curr_track.duration);
+        seekPosition = curr_track.currentTime * (100 / curr_track.duration);
         seek_slider.value = seekPosition;
 
         let currentMinutes = Math.floor(curr_track.currentTime / 60);
@@ -147,7 +147,7 @@ function setUpdate(){
         if(currentMinutes < 10) {currentMinutes = "0" + currentMinutes; }
         if(durationMinutes < 10) { durationMinutes = "0" + durationMinutes; }
 
-        tempo_atual.textContent = currentMinutes + ":" + currentSeconds;
-        dur_total.textContent = durationMinutes + ":" + durationSeconds;
+        curr_time.textContent = currentMinutes + ":" + currentSeconds;
+        total_duration.textContent = durationMinutes + ":" + durationSeconds;
     }
 }
