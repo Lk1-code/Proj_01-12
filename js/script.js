@@ -1,19 +1,19 @@
-let tocando_agora = document.querySelector('.tocando-agora');
-let arte_musica = document.querySelector('.arte-musica');
-let nome_faixa = document.querySelector('.nome-faixa');
-let artista_faixa = document.querySelector('.artista-faixa');
+const tocando_agora = document.querySelector('.tocando-agora');
+const arte_musica = document.querySelector('.arte-musica');
+const nome_faixa = document.querySelector('.nome-faixa');
+const artista_faixa = document.querySelector('.artista-faixa');
 
-let playpause_btn = document.querySelector('.playpause-track');
-let prox_btn = document.querySelector('.proxima-faixa');
-let anterior_btn = document.querySelector('.faixa-anterior');
+const playpause_btn = document.querySelector('.playpause-track');
+const prox_btn = document.querySelector('.proxima-faixa');
+const anterior_btn = document.querySelector('.faixa-anterior');
 
 let seek_slider = document.querySelector('.seek_slider');
-let volume_slider = document.querySelector('volume_slider');
-let tempo_atual = document.querySelector('.tempo-atual');
-let dur_total = document.querySelector('.duracao-total');
-let wave = document.getElementById('wave');
-let randomIcon = document.querySelector('.fa-random');
-let curr_track = document.createElement('audio');
+const volume_slider = document.querySelector('volume_slider');
+const tempo_atual = document.querySelector('.tempo-atual');
+const dur_total = document.querySelector('.duracao-total');
+const wave = document.getElementById('wave');
+const randomIcon = document.querySelector('.fa-random');
+const curr_track = document.createElement('audio');
 
 let track_index = 0;
 let isPlaying = false;
@@ -25,17 +25,17 @@ const lista_musica = [
       img: './src/cover.jpg',
       name: 'To the Hellfire',
       artist: "Lorna Shore",
-      music: "./src/01. To the Hellfire.mp3",
+      music: "./src/To the Hellfire.mp3",
     },
     {
-      Image: '.src/cover.jpg',
-      music: "./src/02. Of the Abyss.mp3",
+      img: './src/cover.jpg',
+      music: "./src/Of the Abyss.mp3",
       name: "Of the Abyss",
       artist: "Lorna Shore",
     },
     {
-      Image: '.src/cover.jpg',
-      src: "./src/03. ...And I Return to Nothingness.mp3",
+      img: './src/cover.jpg',
+      music: "./src/And I Return to Nothingness.mp3",
       name: "And I Return to Nothingness",
       artist: "Lorna Shore",
     },
@@ -58,30 +58,8 @@ const lista_musica = [
     updateTimer = setInterval(setUpdate, 1000);
 
     curr_track.addEventListener('ended', nextTrack);
-    //random_bg_color();
 
   }
-  /*function random_bg_color(){
-    let hex = ['0', '1', '2', '3', '4', '5', '6', '7' ,'8','9','a','b','c','d','e'];
-    let a;
-
-  function populate(a){
-    for(let i=0; i<6; i++){
-        let x = Math.round(Math.random() * 14);
-        let y = hex[x];
-
-        a+= y;
-    }
-    return a;
-  }
-  let color1 = populate('#');
-  let color2 = populate('#');
-  var angle = 'to right';
-
-  let gradient = 'linear-gradient(' + angle + ',' + color1 + ',' +color2 +')';
-  document.body.style.background = gradient;
-}
-*/
 function reset(){
     tempo_atual.textContent = "00:00";
     dur_total.textContent = "00:00";
@@ -156,7 +134,7 @@ function setVolume(){
 function setUpdate(){
     let seekPosition = 0;
     if(!isNaN(curr_track.duration)){
-        seekPosition = curr_track.currentTime * (100 / curr_track.duration);
+        seekPosition = curr_track.dur_total * (100 / curr_track.duration);
         seek_slider.value = seekPosition;
 
         let currentMinutes = Math.floor(curr_track.currentTime / 60);
