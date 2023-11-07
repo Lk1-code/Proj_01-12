@@ -12,57 +12,83 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-  <div class="player">
-    <div class="wrapper">
-      <div class="details">
-        <div class="tocando-agora">Tocando</div>
-        <div class="arte-musica"></div>
-        <div class="nome-faixa">Nome da musica</div>
-        <div class="artista-faixa">Nome do artista</div>
-      </div>
-      <div class="progress-bar">
+  <div id="section">
+    <div class="player">
+      <div class="wrapper">
+        <div class="details">
+          <div class="tocando-agora">Tocando</div>
+          <div class="arte-musica"></div>
+          <div class="nome-faixa">Nome da musica</div>
+          <div class="artista-faixa">Nome do artista</div>
+        </div>
+        <div class="progress-bar">
+          <div class="slider_container">
+            <div class="tempo-atual">00:00</div>
+            <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
+            <div class="duracao-total">00:00</div>
+          </div>
+        </div>  
         <div class="slider_container">
-          <div class="tempo-atual">00:00</div>
-          <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
-          <div class="duracao-total">00:00</div>
+          <i class="fa fa-volume-down"></i>
+          <input type="range" min="0" max="100" value="99" class="volume_slider" onchange="setVolume()">
+          <i class="fa fa-volume-up"></i>
         </div>
-      </div>  
-      <div class="slider_container">
-        <i class="fa fa-volume-down"></i>
-        <input type="range" min="0" max="100" value="99" class="volume_slider" onchange="setVolume()">
-        <i class="fa fa-volume-up"></i>
-      </div>
 
-      <div class="buttons">
-        <div class="faixa-aleatoria" onclick="faixaAleatoria()">
-          <i class="fas fa-random fa-2x" title="random"></i>
+        <div class="buttons">
+          <div class="faixa-aleatoria" onclick="faixaAleatoria()">
+            <i class="fas fa-random fa-2x" title="random"></i>
+          </div>
+          <div class="faixa-anterior" onclick="prevTrack()">
+            <i class="fa fa-step-backward fa-2x"></i>
+          </div>
+          <div class="playpause-track" onclick="playpauseTrack()">
+            <i class="fa fa-play-circle fa-5x" ></i>
+          </div>
+          <div class="proxima-faixa" onclick="nextTrack()">
+            <i class="fas fa-step-forward fa-2x"></i>
+          </div>
+          <div class="repete-faixa" onclick="repetirFaixa()">
+            <i class="fa fa-repeat fa-2x" title="repeat"></i>
+          </div>
         </div>
-        <div class="faixa-anterior" onclick="prevTrack()">
-          <i class="fa fa-step-backward fa-2x"></i>
-        </div>
-        <div class="playpause-track" onclick="playpauseTrack()">
-          <i class="fa fa-play-circle fa-2x" ></i>
-        </div>
-        <div class="proxima-faixa" onclick="nextTrack()">
-          <i class="fas fa-step-forward fa-2x"></i>
-        </div>
-        <div class="repete-faixa" onclick="repetirFaixa()">
-          <i class="fa fa-repeat fa-2x" title="repeat"></i>
+        <div id="wave">
+          <span class="stroke"></span>
+          <span class="stroke"></span>
+          <span class="stroke"></span>
+          <span class="stroke"></span>
+          <span class="stroke"></span>
+          <span class="stroke"></span>
+          <span class="stroke"></span>
+          <span class="stroke"></span>
         </div>
       </div>
-      <div id="wave">
-        <span class="stroke"></span>
-        <span class="stroke"></span>
-        <span class="stroke"></span>
-        <span class="stroke"></span>
-        <span class="stroke"></span>
-        <span class="stroke"></span>
-        <span class="stroke"></span>
-        <span class="stroke"></span>
-      </div>
-      
     </div>
+      <div class="playlist">
+        <div class="p_musicas">
+          <p id="p_arte"></p>
+          <p id="p_titulo">nome da musica</p>
+          <p id="p_artista">artista</p>
+          <button id="active"><i class="bx bx-play"></i></button>
+        </div>
+        <div class="p_musicas">
+          <p id="p_arte"></p>
+          <p id="p_titulo">nome da musica</p>
+          <p id="p_artista">artista</p>
+          <button id="active"><i class="bx bx-play"></i></button>
+        </div>
+        <div class="p_musicas">
+          <p id="p_arte"></p>
+          <p id="p_titulo">nome da musica</p>
+          <p id="p_artista">artista</p>
+          <button id="active"><i class="bx bx-play"></i></button>
+        </div>
+        <div class="p_musicas">
+          <div id="p_arte"></div>
+          <p id="p_titulo">nome da musica</p>
+          <p id="p_artista">artista</p>
+          <button id="active"><i class="bx bx-play"></i></button>
+        </div>
+      </div>
   </div>
-
 </body>
 </html>
