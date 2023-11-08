@@ -15,6 +15,10 @@ let wave = document.getElementById('wave');
 let randomIcon = document.querySelector('.fa-random');
 let curr_track = document.createElement('audio');
 
+let P_art = document.querySelector('#p_arte');
+let P_titulo = document.querySelector('#p_titulo');
+let p_artista = document.querySelector('#p_artista');
+
 let track_index = 0;
 let isPlaying = false;
 let isRandom = false;
@@ -55,11 +59,17 @@ const lista_musica = [
     artista_faixa.textContent = lista_musica[track_index].artist;
     tocando_agora.textContent = "Tocando musica " + (track_index + 1) + " de " + lista_musica.length;
 
+    P_art.style.backgroundImage = "url(" + lista_musica[track_index].img + ")";
+    P_titulo.textContent = lista_musica[track_index].name;
+    p_artista.textContent = lista_musica[track_index].artist;
+
+
     updateTimer = setInterval(setUpdate, 1000);
 
     curr_track.addEventListener('ended', nextTrack);
 
   }
+
 function reset(){
     curr_time.textContent = "00:00";
     total_duration.textContent = "00:00";
