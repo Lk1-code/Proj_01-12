@@ -15,9 +15,7 @@ let wave = document.getElementById('wave');
 let randomIcon = document.querySelector('.fa-random');
 let curr_track = document.createElement('audio');
 
-let P_art = document.querySelector('#p_arte');
-let P_titulo = document.querySelector('#p_titulo');
-let p_artista = document.querySelector('#p_artista');
+
 
 let track_index = 0;
 let isPlaying = false;
@@ -46,6 +44,7 @@ const lista_musica = [
   ];
   
   CarregarFaixa(track_index);
+  Ptrack(track_index);
 
   function CarregarFaixa(track_index){
     clearInterval(updateTimer);
@@ -59,9 +58,6 @@ const lista_musica = [
     artista_faixa.textContent = lista_musica[track_index].artist;
     tocando_agora.textContent = "Tocando musica " + (track_index + 1) + " de " + lista_musica.length;
 
-    P_art.style.backgroundImage = "url(" + lista_musica[track_index].img + ")";
-    P_titulo.textContent = lista_musica[track_index].name;
-    p_artista.textContent = lista_musica[track_index].artist;
 
 
     updateTimer = setInterval(setUpdate, 1000);
@@ -69,7 +65,44 @@ const lista_musica = [
     curr_track.addEventListener('ended', nextTrack);
 
   }
+function Ptrack(){
+    
+    let P_art = document.querySelector('.p_arte');
+    let P_titulo = document.querySelector('.p_titulo');
+    let p_artista = document.querySelector('.p_artista');
 
+
+    lista_musica.forEach(function(value,index){
+        P_art.style.backgroundImage = "url(" + value.img + ")";
+        P_titulo[index].innerHTML = value.name;
+        p_artista[index].innerHTML = value.artist
+    });
+
+}
+function Plist(){
+
+}
+/*function Plist(){
+    let playlist = document.getElementById(".playlist");
+    for (i = 0; i < lista_musica.length; ++i) {
+        var art = document.createElement('div');
+        art.classList.add('p_art');
+        var titulo = document.createElement('div');
+        titulo.classList.add('p_titulo');
+        var n_artista = document.createElement('div');
+        n_artista.classList.add('p_artista');
+
+        art.style.backgroundImage = "url(" + lista_musica[i].img + ")"
+        titulo.textContent = lista_musica[i].name;
+        n_artista.textContent = lista_musica[i].artist;
+        
+
+        document.body.appendChild(art);
+        document.body.appendChild(titulo);
+        document.body.appendChild(n_artista);
+
+     } 
+}*/
 function reset(){
     curr_time.textContent = "00:00";
     total_duration.textContent = "00:00";
