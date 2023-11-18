@@ -15,14 +15,11 @@ let wave = document.getElementById('wave');
 let randomIcon = document.querySelector('.fa-random');
 let curr_track = document.createElement('audio');
 
-let P_art = document.querySelector('#p_arte');
-let P_titulo = document.querySelector('#p_titulo');
-let p_artista = document.querySelector('#p_artista');
-
 let track_index = 0;
 let isPlaying = false;
 let isRandom = false;
 let updateTimer;
+
 
 const lista_musica = [ 
     {
@@ -38,14 +35,57 @@ const lista_musica = [
       artist: "Lorna Shore",
     },
     {
-      img: './src/cover.jpg',
-      music: "./src/And I Return to Nothingness.mp3",
-      name: "And I Return to Nothingness",
+        img: './src/cover.jpg',
+        music: "./src/And I Return to Nothingness.mp3",
+        name: "And I Return to Nothingness",
+        artist: "Lorna Shore",
+    },
+    {
+      img: './src/cover2.jpg',
+      music: "./src/Apotheosis.mp3",
+      name: "Apotheosis",
       artist: "Lorna Shore",
     },
-  ];
+    
+    {
+        img: './src/cover2.jpg',
+        music: "./src/Cursed to Die.mp3",
+        name: "Cursed to Die",
+        artist: "Lorna Shore",
+    },
+    {
+        img: './src/cover2.jpg',
+        music: "./src/Pain Remains I Dancing Like Flames.mp3",
+        name: "Pain Remains I Dancing Like Flames",
+        artist: "Lorna Shore",
+    },
+    {
+        img: './src/cover2.jpg',
+        music: "./src/Pain Remains II After All I've Done, I'll Disappear.mp3",
+        name: "Pain Remains II After All I've Done, I'll Disappear",
+        artist: "Lorna Shore",
+    },
+    {
+        img: './src/cover2.jpg',
+        music: "./src/Pain Remains III In a Sea of Fire.mp3",
+        name: "Pain Remains III In a Sea of Fire",
+        artist: "Lorna Shore",
+    },
+    {
+        img: './src/cover2.jpg',
+        music: "./src/Soulless Existence.mp3",
+        name: "Soulless Existence",
+        artist: "Lorna Shore",
+    },
+    {
+        img: './src/cover2.jpg',
+        music: "./src/SunEater.mp3",
+        name: "Sun/Eater",
+        artist: "Lorna Shore",
+    },];
   
   CarregarFaixa(track_index);
+  Ptrack(track_index);
 
   function CarregarFaixa(track_index){
     clearInterval(updateTimer);
@@ -59,9 +99,6 @@ const lista_musica = [
     artista_faixa.textContent = lista_musica[track_index].artist;
     tocando_agora.textContent = "Tocando musica " + (track_index + 1) + " de " + lista_musica.length;
 
-    P_art.style.backgroundImage = "url(" + lista_musica[track_index].img + ")";
-    P_titulo.textContent = lista_musica[track_index].name;
-    p_artista.textContent = lista_musica[track_index].artist;
 
 
     updateTimer = setInterval(setUpdate, 1000);
@@ -69,7 +106,29 @@ const lista_musica = [
     curr_track.addEventListener('ended', nextTrack);
 
   }
+function Ptrack(){
+    
+    let playlist = document.querySelector('.playlist');
 
+    for (let i = 0; i < lista_musica.length; i++) {
+
+        let Html = ` <div class="p_musicas">
+        <div class="p_arte" style="background-image: url(${lista_musica[i].img})" </div></div> 
+        <div class="nome"> 
+            <div class="p_titulo">${lista_musica[i].name}</div> 
+            <div class="p_artista">${lista_musica[i].artist}</div> 
+            </div> 
+            <div class="p_botao"><i class="fa fa-play-circle fa-3x" id="p_play" onclick=escolheTrack()></i></div> </div>`;
+                   
+        playlist.insertAdjacentHTML("beforeend",Html);
+    };
+}
+function escolheTrack(){
+    curr_track = $lista_musica[i].music;
+    track_index = $lista_musica[i].length;
+    curr_track.play()
+    CarregarFaixa(track_index);
+}
 function reset(){
     curr_time.textContent = "00:00";
     total_duration.textContent = "00:00";
@@ -87,11 +146,6 @@ function pauseAlea(){
     randomIcon.classList.add('randomActive');
 }
 function repetirFaixa(){
-    let current_index = track_index;
-    CarregarFaixa(current_index);
-    tocarFaixa();
-}
-function repeatTrack(){
     let current_index = track_index;
     CarregarFaixa(current_index);
     tocarFaixa();

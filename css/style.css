@@ -6,7 +6,7 @@ body {
   }
   #section{
     display:flex;
-    margin-left: 400px;
+    margin-left: 300px;
   }
   .player{
     height: 95vh;
@@ -217,10 +217,10 @@ body {
     align-items: center;
     display: flex;
     flex-direction: column;
-    margin: 25px;
-    margin-top: 142px;
+    margin: 35px;
+    margin-top: 122px;
     border-radius: 20px;
-    width: 600px;
+    width: 700px;
     height: fit-content;
     background-color: #28282B;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
@@ -239,13 +239,13 @@ body {
       margin-top: -0px;
 
   }
-  #nome{
+  .nome{
   padding: 5px;
   margin-left: 30px;
   display: inline-block;
   text-align: center;
   }
-  #p_arte{
+  .p_arte{
   height: 100px;
   width: 100px;
   border:2px solid 	#FFFAFA;
@@ -255,11 +255,11 @@ body {
   -webkit-box-shadow: 0px 6px 5px black;
   box-shadow: 0px 6px 5px black;
   }
-  #p_titulo{
+  .p_titulo{
     padding: 10px;
     font-size: 1.2rem;
     margin-top: 10px;
-    width: 160px;
+    width: 250px;
     text-align: center;
     justify-content: center;
   }
