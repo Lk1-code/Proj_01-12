@@ -52,6 +52,8 @@ body {
   
   .nome-faixa {
   font-size: 1.7rem;
+  max-width: 250px;
+  text-align: center;
   }
   
   .artista-faixa {
@@ -267,4 +269,26 @@ body {
     cursor: pointer;
     margin-top: 25px;
     margin-left: 100px;
+  }
+  @media screen and (max-width: 426px){
+  
+    #section{
+      display:block;
+      margin-left: 0;
+    }
+    .playlist{
+      margin: 0;
+      margin-top: 0;
+      width: 100%;
+    }
+    .p_arte{
+      height: 100px;
+      width: 100px;
+    }
+    .p_titulo{
+      padding: 1px;
+      font-size: 1rem;
+      margin-top: 0;
+      width: 50px;
+    }
   }

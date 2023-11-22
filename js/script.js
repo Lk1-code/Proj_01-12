@@ -113,7 +113,7 @@ function Ptrack(){
     let playlist = document.querySelector('.playlist');
 
     for (let i = 0; i < lista_musica.length; i++) {
-
+        let musicP = i;
         let Html = ` <div class="p_musicas">
         <div class="p_arte" style="background-image: url(${lista_musica[i].img})" </div></div> 
         <div class="nome"> 
@@ -123,14 +123,13 @@ function Ptrack(){
             <div class="p_botao"><i class="fa fa-play-circle fa-3x" id="p_play" onclick=escolheTrack()></i></div> </div>`;
                    
         playlist.insertAdjacentHTML("beforeend",Html);
+        
+    
     };
+    
+    
 }
-function escolheTrack(){
-    curr_track = $lista_musica[i].music;
-    track_index = $lista_musica[i].length;
-    curr_track.play()
-    CarregarFaixa(track_index);
-}
+
 function reset(){
     curr_time.textContent = "00:00";
     total_duration.textContent = "00:00";
