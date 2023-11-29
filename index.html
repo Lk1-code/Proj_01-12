@@ -1,57 +1,57 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="width-device-width, initial-scale=1.0">
-    <title>Music Player</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="./js/script.js" defer></script>
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"><!--biblioteca de box icon que sera utilizado--> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body>
-  <div id="section">
-    <div class="player">
-      <div class="wrapper">
-        <div class="details">
-          <div class="tocando-agora">Tocando</div>
-          <div class="arte-musica"></div>
-          <div class="nome-faixa">Nome da musica</div>
-          <div class="artista-faixa">Nome do artista</div>
-        </div>
-        <div class="progress-bar">
-          <div class="slider_container">
-            <div class="tempo-atual">00:00</div>
-            <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
-            <div class="duracao-total">00:00</div>
-          </div>
-        </div>  
-        <div class="slider_container">
-          <i class="fa fa-volume-down"></i>
-          <input type="range" min="0" max="100" value="99" class="volume_slider" onchange="setVolume()">
-          <i class="fa fa-volume-up"></i>
-        </div>
-
-        <div class="buttons">
-          <div class="faixa-aleatoria" onclick="faixaAleatoria()">
-            <i class="fas fa-random fa-2x" title="random"></i>
-          </div>
-          <div class="faixa-anterior" onclick="prevTrack()">
-            <i class="fa fa-step-backward fa-2x"></i>
-          </div>
-          <div class="playpause-track" onclick="playpauseTrack()">
-            <i class="fa fa-play-circle fa-5x" ></i>
-          </div>
-          <div class="proxima-faixa" onclick="nextTrack()">
-            <i class="fas fa-step-forward fa-2x"></i>
-          </div>
-          <div class="repete-faixa" onclick="repetirFaixa()">
-            <i class="fa fa-repeat fa-2x" title="repeat"></i>
-          </div>
-        </div>
-        <div id="wave">
+<!DOCTYPE html> <!-- Define o tipo de documento para HTML5 -->
+<html lang="pt-br"> <!-- Inicia o documento HTML e define o idioma como português do Brasil -->
+<head> <!-- Inicia a seção de cabeçalho do documento HTML -->
+    <meta charset="UTF-8"> <!-- Define a codificação de caracteres para o documento como UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Define a viewport para tornar o site responsivo em dispositivos móveis -->
+    <meta http-equiv="X-UA-Compatible" content="width-device-width, initial-scale=1.0"> <!-- Define a compatibilidade do navegador -->
+    <title>Music Player</title> <!-- Define o título do documento que é exibido na barra de título do navegador -->
+    <link rel="stylesheet" href="css/style.css"> <!-- Conecta o arquivo CSS externo chamado 'style.css' -->
+    <script src="./js/script.js" defer></script> <!-- Conecta o arquivo JavaScript externo chamado 'script.js'. O atributo 'defer' garante que o script seja executado após o carregamento completo da página -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"> <!-- Conecta a biblioteca de ícones 'boxicons' -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"> <!-- Conecta a biblioteca de ícones 'font-awesome' versão 5.13.0 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- Conecta a biblioteca de ícones 'font-awesome' versão 4.7.0 -->
+</head> <!-- Fecha a seção de cabeçalho do documento HTML -->
+<body> <!-- Inicia a seção de corpo do documento HTML -->
+  <div id="section"> <!-- Inicia uma divisão com o id 'section' -->
+    <div class="player"> <!-- Inicia uma divisão com a classe 'player' -->
+      <div class="wrapper"> <!-- Inicia uma divisão com a classe 'wrapper' -->
+        <div class="details"> <!-- Inicia uma divisão com a classe 'details' -->
+          <div class="tocando-agora">Tocando</div> <!-- Exibe o texto 'Tocando' na interface do usuário -->
+          <div class="arte-musica"></div> <!-- Reserva um espaço para a arte da música -->
+          <div class="nome-faixa">Nome da musica</div> <!-- Exibe o texto 'Nome da musica' na interface do usuário -->
+          <div class="artista-faixa">Nome do artista</div> <!-- Exibe o texto 'Nome do artista' na interface do usuário -->
+        </div> <!-- Fecha a divisão 'details' -->
+        <div class="progress-bar"> <!-- Inicia uma divisão com a classe 'progress-bar' -->
+          <div class="slider_container"> <!-- Inicia uma divisão com a classe 'slider_container' -->
+            <div class="tempo-atual">00:00</div> <!-- Exibe o tempo atual da faixa como '00:00' -->
+            <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()"> <!-- Cria um controle deslizante para buscar a faixa. A função 'seekTo()' é chamada quando o valor do controle deslizante muda -->
+            <div class="duracao-total">00:00</div> <!-- Exibe a duração total da faixa como '00:00' -->
+          </div> <!-- Fecha a divisão 'slider_container' -->
+        </div> <!-- Fecha a divisão 'progress-bar' -->
+        <div class="slider_container"> <!-- Inicia uma divisão com a classe 'slider_container' -->
+          <i class="fa fa-volume-down"></i> <!-- Exibe o ícone de volume baixo -->
+          <input type="range" min="0" max="100" value="99" class="volume_slider" onchange="setVolume()"> <!-- Cria um controle deslizante para ajustar o volume. A função 'setVolume()' é chamada quando o valor do controle deslizante muda -->
+          <i class="fa fa-volume-up"></i> <!-- Exibe o ícone de volume alto -->
+        </div> <!-- Fecha a divisão 'slider_container' -->
+        <div class="buttons"> <!-- Inicia uma divisão com a classe 'buttons' -->
+          <div class="faixa-aleatoria" onclick="faixaAleatoria()"> <!-- Cria um botão para tocar uma faixa aleatória. A função 'faixaAleatoria()' é chamada quando o botão é clicado -->
+            <i class="fas fa-random fa-2x" title="random"></i> <!-- Exibe o ícone de faixa aleatória -->
+          </div> <!-- Fecha a divisão 'faixa-aleatoria' -->
+          <div class="faixa-anterior" onclick="prevTrack()"> <!-- Cria um botão para tocar a faixa anterior. A função 'prevTrack()' é chamada quando o botão é clicado -->
+            <i class="fa fa-step-backward fa-2x"></i> <!-- Exibe o ícone de faixa anterior -->
+          </div> <!-- Fecha a divisão 'faixa-anterior' -->
+          <div class="playpause-track" onclick="playpauseTrack()"> <!-- Cria um botão para tocar/pausar a faixa. A função 'playpauseTrack()' é chamada quando o botão é clicado -->
+            <i class="fa fa-play-circle fa-5x" ></i> <!-- Exibe o ícone de tocar -->
+          </div> <!-- Fecha a divisão 'playpause-track' -->
+          <div class="proxima-faixa" onclick="nextTrack()"> <!-- Cria um botão para tocar a próxima faixa. A função 'nextTrack()' é chamada quando o botão é clicado -->
+            <i class="fas fa-step-forward fa-2x"></i> <!-- Exibe o ícone de próxima faixa -->
+          </div> <!-- Fecha a divisão 'proxima-faixa' -->
+          <div class="repete-faixa" onclick="repetirFaixa()"> <!-- Cria um botão para repetir a faixa. A função 'repetirFaixa()' é chamada quando o botão é clicado -->
+            <i class="fa fa-repeat fa-2x" title="repeat"></i> <!-- Exibe o ícone de repetir -->
+          </div> <!-- Fecha a divisão 'repete-faixa' -->
+        </div> <!-- Fecha a divisão 'buttons' -->
+        <div id="wave"> <!-- Inicia uma divisão com o id 'wave' -->
+          <span class="stroke"></span> <!-- Cria um elemento span com a classe 'stroke'. Este elemento é repetido 8 vezes -->
           <span class="stroke"></span>
           <span class="stroke"></span>
           <span class="stroke"></span>
@@ -59,12 +59,11 @@
           <span class="stroke"></span>
           <span class="stroke"></span>
           <span class="stroke"></span>
-          <span class="stroke"></span>
-        </div>
-      </div>
-    </div>
-      <div class="playlist">
-        <h2>Playlist</h2>
-  </div>
-</body>
-</html>
+        </div> <!-- Fecha a divisão 'wave' -->
+      </div> <!-- Fecha a divisão 'wrapper' -->
+    </div> <!-- Fecha a divisão 'player' -->
+      <div class="playlist"> <!-- Inicia uma divisão com a classe 'playlist' -->
+        <h2>Playlist</h2> <!-- Exibe o texto 'Playlist' como um título de nível 2 -->
+  </div> <!-- Fecha a divisão 'playlist' -->
+</body> <!-- Fecha a seção de corpo do documento HTML -->
+</html> <!-- Fecha o documento HTML -->
