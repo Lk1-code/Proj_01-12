@@ -1,294 +1,338 @@
+/* Define as propriedades gerais do corpo do documento */
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: linear-gradient(to right,#353935, darkred);
-  font-weight: bold;
-  color: white;
-  }
-  #section{
-    display:flex;
-    margin-left: 300px;
-  }
-  .player{
-    height: 95vh;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
+  font-family: Arial, Helvetica, sans-serif; /* Define a família de fontes para o corpo do documento */
+  background: linear-gradient(to right, #353935, darkred); /* Cria um fundo com gradiente linear */
+  font-weight: bold; /* Define o peso da fonte como negrito */
+  color: white; /* Define a cor do texto como branco */
 }
-  .wrapper{
-    border: 1px solid transparent;
-    padding: 30px;
-    border-radius: 20px;
-    background-color: #28282B;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-  }
-  
-  .details {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  }
-  
-  .arte-musica {
-  margin: 25px;
-  height: 250px;
-  width: 250px;
-  border:2px solid 	#FFFAFA;
-  background-size: cover;
-  background-position: center;
-  border-radius: 50%;
-  -moz-box-shadow: 0px 6px 5px black;
-  -webkit-box-shadow: 0px 6px 5px black;
-  box-shadow: 0px 6px 5px black;
-  -moz-border-radius:190px;
-  -webkit-border-radius:190px;
-  border-radius:190px;
-  }
-  
-  .tocando-agora {
-  font-size: 1rem;
-  }
-  
-  .nome-faixa {
-  font-size: 1.7rem;
-  max-width: 250px;
-  text-align: center;
-  }
-  
-  .artista-faixa {
-  margin-top: 5px;
-  font-size: 1.5rem;
-  }
-  
-  .buttons {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-bottom: 30px;
-  }
-  .active{
-      color: black;
-  }
-.fa-5x{
-  color: darkred;
-}
-  .repete-faixa,
-  .faixa-aleatoria,
-  .pausa-faixa,
-  .faixa-anterior,
-  .proxima-faixa {
-  padding: 25px;
-  opacity: 0.8;
-  transition: opacity .2s;
-  }
-  
-  .repete-faixa:hover,
-  .faixa-aleatoria:hover,
-  .faixa-anterior:hover,
-  .proxima-faixa:hover {
-  opacity: 1.0;
-  }
 
-  .fa-5x:hover{
-    color: red;
-    transition-duration: 500ms;
-  }
-  
-  .slider_container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  }
-  
-  .seek_slider, .volume_slider {
-  -webkit-appearance: none;
+/* Define estilos para a seção principal */
+#section {
+  display: flex; /* Utiliza o modelo de layout flexível */
+  margin-left: 300px; /* Adiciona uma margem à esquerda de 300 pixels */
+}
+
+/* Estilos para a área do player de música */
+.player {
+  height: 95vh; /* Define a altura do elemento como 95% da altura da viewport */
+  display: flex; /* Utiliza o modelo de layout flexível */
+  align-items: center; /* Centraliza os itens verticalmente */
+  flex-direction: column; /* Define a direção dos itens como coluna */
+  justify-content: center; /* Centraliza os itens horizontalmente */
+}
+
+/* Estilos para o contêiner principal do player */
+.wrapper {
+  border: 1px solid transparent; /* Adiciona uma borda com 1 pixel de largura e torna-a transparente */
+  padding: 30px; /* Adiciona preenchimento interno de 30 pixels */
+  border-radius: 20px; /* Adiciona bordas arredondadas com raio de 20 pixels */
+  background-color: #28282B; /* Define a cor de fundo como cinza escuro */
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px; /* Adiciona sombra ao contêiner */
+}
+
+/* Estilos para a seção de detalhes no player */
+.details {
+  display: flex; /* Utiliza o modelo de layout flexível */
+  align-items: center; /* Centraliza os itens verticalmente */
+  flex-direction: column; /* Define a direção dos itens como coluna */
+  justify-content: center; /* Centraliza os itens horizontalmente */
+}
+
+/* Estilos para a imagem da capa do álbum */
+.arte-musica {
+  margin: 25px; /* Adiciona margem de 25 pixels */
+  height: 250px; /* Define a altura da imagem como 250 pixels */
+  width: 250px; /* Define a largura da imagem como 250 pixels */
+  border: 2px solid #FFFAFA; /* Adiciona uma borda sólida com cor */
+  background-size: cover; /* Define o tamanho da imagem de fundo como cobrindo totalmente o elemento */
+  background-position: center; /* Centraliza a posição da imagem de fundo */
+  border-radius: 50%; /* Adiciona bordas arredondadas para criar um círculo */
+  box-shadow: 0px 6px 5px black; /* Adiciona uma sombra à imagem */
+}
+
+/* Estilos para a informação da faixa atualmente tocando */
+.tocando-agora {
+  font-size: 1rem; /* Define o tamanho da fonte como 1 rem */
+}
+
+/* Estilos para o nome da faixa */
+.nome-faixa {
+  font-size: 1.7rem; /* Define o tamanho da fonte como 1.7 rem */
+  max-width: 250px; /* Define a largura máxima do elemento como 250 pixels */
+  text-align: center; /* Centraliza o texto horizontalmente */
+}
+
+/* Estilos para o nome do artista da faixa */
+.artista-faixa {
+  margin-top: 5px; /* Adiciona margem superior de 5 pixels */
+  font-size: 1.5rem; /* Define o tamanho da fonte como 1.5 rem */
+}
+
+/* Estilos para os botões de controle do player */
+.buttons {
+  display: flex; /* Utiliza o modelo de layout flexível */
+  flex-direction: row; /* Define a direção dos itens como linha */
+  align-items: center; /* Centraliza os itens verticalmente */
+  margin-bottom: 30px; /* Adiciona margem inferior de 30 pixels */
+}
+
+/* Estilos para o ícone ativo (destacado) */
+.active {
+  color: black; /* Define a cor do texto como preto */
+}
+
+/* Estilos para o ícone com classe .fa-5x */
+.fa-5x {
+  color: darkred; /* Define a cor do texto como vermelho escuro */
+}
+
+/* Estilos para os botões de controle do player (efeito de hover) */
+.repete-faixa,
+.faixa-aleatoria,
+.pausa-faixa,
+.faixa-anterior,
+.proxima-faixa {
+  padding: 25px; /* Adiciona preenchimento interno de 25 pixels */
+  opacity: 0.8; /* Define a opacidade inicial como 0.8 */
+  transition: opacity 0.2s; /* Adiciona uma transição de 0.2 segundos para a propriedade de opacidade */
+}
+
+/* Efeito de hover para os botões de controle do player */
+.repete-faixa:hover,
+.faixa-aleatoria:hover,
+.faixa-anterior:hover,
+.proxima-faixa:hover {
+  opacity: 1.0; /* Define a opacidade como 1.0 ao passar o mouse sobre os botões */
+}
+
+/* Efeito de hover para o ícone com classe .fa-5x */
+.fa-5x:hover {
+  color: red; /* Define a cor do texto como vermelho ao passar o mouse sobre o ícone */
+  transition-duration: 500ms; /* Define a duração da transição como 500 milissegundos */
+}
+
+/* Estilos para o contêiner do slider (barra deslizante) */
+.slider_container {
+  display: flex; /* Utiliza o modelo de layout flexível */
+  justify-content: center; /* Centraliza os itens horizontalmente */
+  align-items: center; /* Centraliza os itens verticalmente */
+}
+/* Estilos para os controles de seek (barra de progresso) e volume */
+.seek_slider, .volume_slider {
+  -webkit-appearance: none; /* Remove a aparência padrão do navegador */
   -moz-appearance: none;
   appearance: none;
-  height: 5px;
-  background: red;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
-  }
-  
-  .seek_slider::-webkit-slider-thumb,
-  .volume_slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
+  height: 5px; /* Define a altura da barra de progresso e controle de volume */
+  background: red; /* Define a cor de fundo como vermelho */
+  -webkit-transition: .2s; /* Adiciona uma transição de 0.2 segundos */
+  transition: opacity .2s; /* Adiciona uma transição de 0.2 segundos para a opacidade */
+}
+
+/* Estilos para o polegar dos controles de seek e volume */
+.seek_slider::-webkit-slider-thumb,
+.volume_slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Remove a aparência padrão do navegador */
   -moz-appearance: none;
   appearance: none;
-  width: 15px;
-  height: 15px;
-  background: white;
-  border: 3px solid red;
-  cursor: grab;
-  border-radius: 100%;
-  }
-  
-  .seek_slider:hover,
-  .volume_slider:hover {
-  opacity: 1.0;
-  }
-  
-  .seek_slider {
-  width: 60%;
-  }
-  
-  .volume_slider {
-  width: 30%;
-  }
-  
-  .tempo-atual,
-  .duracao-total {
-  padding: 10px;
-  }
-  
-  i.fa-volume-down,
-  i.fa-volume-up {
-  padding: 10px;
-  }
-  
-  i,
-  i.fa-play-circle,
-  i.fa-pause-circle,
-  i.fa-step-forward,
-  i.fa-step-backward,
-  p {
-  cursor: pointer;
-  }
-  .randomActive{
-      color: black;
-  }
-  .rotate {
-      animation: rotation 8s infinite linear;
-  }
-  @keyframes rotation {
-      from {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(359deg);
-      }
-  }
-  .loader {
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .loader .stroke{
-      background: #f1f1f1;
-      height: 150%;
-      width: 10px;
-      border-radius: 50px;
-      margin: 0 5px;
-      animation: animate 1.4s linear infinite;
-  }
-    @keyframes animate {
-      50% {
-        height: 20%;
-        background: red;
-      }
-  
-      100% {
-        background: #28282B;
-        height: 100%;
-      }
-    }
-    .stroke:nth-child(1){
-        animation-delay: 0s;
-    }
-    .stroke:nth-child(2){
-      animation-delay: 0.3s;
-  }
-  .stroke:nth-child(3){
-      animation-delay: 0.6s;
-  }
-  .stroke:nth-child(4){
-      animation-delay: 0.9s;
-  }
-  .stroke:nth-child(5){
-      animation-delay: 0.6s;
-  }
-  .stroke:nth-child(6){
-      animation-delay: 0.3s;
-  }
-  .stroke:nth-child(7){
-      animation-delay: 0s;
-  }
-  .playlist{
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    margin: 35px;
-    margin-top: 122px;
-    border-radius: 20px;
-    width: 700px;
-    height: fit-content;
-    background-color: #28282B;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-  }
-  .p_musicas{
-    width: 90%;
-    display: flex;
-    margin-inline: 1px;
-    margin: 10px;
-    padding: 20px;
-    border-radius: 3%;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-    
-  }
-  .p_musicas p{
-      margin-top: -0px;
+  width: 15px; /* Define a largura do polegar */
+  height: 15px; /* Define a altura do polegar */
+  background: white; /* Define a cor de fundo como branco */
+  border: 3px solid red; /* Adiciona uma borda ao redor do polegar */
+  cursor: grab; /* Define o cursor como "agarre" */
+  border-radius: 100%; /* Adiciona bordas arredondadas para criar um círculo */
+}
 
+/* Efeito de hover para os controles de seek e volume */
+.seek_slider:hover,
+.volume_slider:hover {
+  opacity: 1.0; /* Torna os controles totalmente visíveis ao passar o mouse sobre eles */
+}
+
+/* Estilos específicos para o controle de seek */
+.seek_slider {
+  width: 60%; /* Define a largura como 60% */
+}
+
+/* Estilos específicos para o controle de volume */
+.volume_slider {
+  width: 30%; /* Define a largura como 30% */
+}
+
+/* Estilos para elementos adicionais relacionados à interface do player de música */
+.tempo-atual, .duracao-total {
+  padding: 10px; /* Adiciona preenchimento interno de 10 pixels */
+}
+
+i.fa-volume-down, i.fa-volume-up {
+  padding: 10px; /* Adiciona preenchimento interno de 10 pixels */
+}
+
+i, i.fa-play-circle, i.fa-pause-circle, i.fa-step-forward, i.fa-step-backward, p {
+  cursor: pointer; /* Define o cursor como ponteiro para indicar interatividade */
+}
+
+/* Estilos para elementos com a classe .randomActive */
+.randomActive {
+  color: black; /* Define a cor do texto como preto */
+}
+
+/* Estilos para a animação de rotação */
+.rotate {
+  animation: rotation 8s infinite linear; /* Aplica uma animação de rotação infinita em 8 segundos */
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg); /* Define a rotação inicial como 0 graus */
   }
-  .nome{
-  padding: 5px;
-  margin-left: 30px;
-  display: inline-block;
-  text-align: center;
+  to {
+    transform: rotate(359deg); /* Define a rotação final como 359 graus */
   }
-  .p_arte{
-  height: 100px;
-  width: 100px;
-  border:2px solid 	#FFFAFA;
-  background-size: cover;
-  background-position: center;
-  -moz-box-shadow: 0px 6px 5px black;
-  -webkit-box-shadow: 0px 6px 5px black;
-  box-shadow: 0px 6px 5px black;
+}
+
+/* Estilos para o loader (indicador de carregamento) */
+.loader {
+  height: 30px; /* Define a altura do loader como 30 pixels */
+  display: flex; /* Utiliza o modelo de layout flexível */
+  justify-content: center; /* Centraliza os itens horizontalmente */
+  align-items: center; /* Centraliza os itens verticalmente */
+}
+
+/* Estilos para as linhas do loader */
+.loader .stroke {
+  background: #f1f1f1; /* Define a cor de fundo das linhas */
+  height: 150%; /* Define a altura como 150% */
+  width: 10px; /* Define a largura como 10 pixels */
+  border-radius: 50px; /* Adiciona bordas arredondadas para criar uma forma circular */
+  margin: 0 5px; /* Adiciona margem à direita e à esquerda */
+  animation: animate 1.4s linear infinite; /* Aplica uma animação de alteração de altura */
+}
+
+@keyframes animate {
+  50% {
+    height: 20%; /* Reduz a altura para 20% na metade da animação */
+    background: red; /* Muda a cor para vermelho */
   }
-  .p_titulo{
-    padding: 10px;
-    font-size: 1.2rem;
-    margin-top: 10px;
-    width: 250px;
-    text-align: center;
-    justify-content: center;
+
+  100% {
+    background: #28282B; /* Retorna à cor original e altura total */
+    height: 100%;
   }
-  .p_musicas i{
-    cursor: pointer;
-    margin-top: 25px;
-    margin-left: 100px;
+}
+
+/* Define os atrasos de animação para cada linha do loader */
+.stroke:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.stroke:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.stroke:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.stroke:nth-child(4) {
+  animation-delay: 0.9s;
+}
+
+.stroke:nth-child(5) {
+  animation-delay: 0.6s;
+}
+
+.stroke:nth-child(6) {
+  animation-delay: 0.3s;
+}
+
+.stroke:nth-child(7) {
+  animation-delay: 0s;
+}
+
+/* Estilos para a seção da playlist */
+.playlist {
+  align-items: center; /* Centraliza os itens verticalmente */
+  display: flex; /* Utiliza o modelo de layout flexível */
+  flex-direction: column; /* Define a direção dos itens como coluna */
+  margin: 35px; /* Adiciona margem ao redor da playlist */
+  margin-top: 122px; /* Adiciona margem superior */
+  border-radius: 20px; /* Adiciona bordas arredondadas com raio de 20 pixels */
+  width: 700px; /* Define a largura da playlist como 700 pixels */
+  height: fit-content; /* Adapta a altura conforme o conteúdo */
+  background-color: #28282B; /* Define a cor de fundo como cinza escuro */
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px; /* Adiciona sombra à playlist */
+}
+
+/* Estilos para cada item da playlist */
+.p_musicas {
+  width: 90%; /* Define a largura como 90% */
+  display: flex; /* Utiliza o modelo de layout flexível */
+  margin-inline: 1px; /* Adiciona margem interna de 1 pixel nas extremidades */
+  margin: 10px; /* Adiciona margem ao redor de cada item */
+  padding: 20px; /* Adiciona preenchimento interno de 20 pixels */
+  border-radius: 3%; /* Adiciona bordas arredondadas com raio de 3% */
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px; /* Adiciona sombra a cada item */
+}
+
+/* Estilos para o parágrafo dentro de cada item da playlist */
+.p_musicas p {
+  margin-top: -0px; /* Ajusta a margem superior para alinhamento visual */
+}
+
+/* Estilos para o nome do item na playlist */
+.nome {
+  padding: 5px; /* Adiciona preenchimento interno de 5 pixels */
+  margin-left: 30px; /* Adiciona margem à esquerda de 30 pixels */
+  display: inline-block; /* Permite alinhamento horizontal */
+  text-align: center; /* Centraliza o texto horizontalmente */
+}
+
+/* Estilos para a imagem do item na playlist */
+.p_arte {
+  height: 100px; /* Define a altura da imagem como 100 pixels */
+  width: 100px; /* Define a largura da imagem como 100 pixels */
+  border: 2px solid #FFFAFA; /* Adiciona uma borda sólida com cor */
+  background-size: cover; /* Define o tamanho da imagem de fundo como cobrindo totalmente o elemento */
+  background-position: center; /* Centraliza a posição da imagem de fundo */
+  box-shadow: 0px 6px 5px black; /* Adiciona uma sombra à imagem */
+}
+
+/* Estilos para o título do item na playlist */
+.p_titulo {
+  padding: 10px; /* Adiciona preenchimento interno de 10 pixels */
+  font-size: 1.2rem; /* Define o tamanho da fonte como 1.2 rem */
+  margin-top: 10px; /* Adiciona margem superior de 10 pixels */
+  width: 250px; /* Define a largura do título como 250 pixels */
+  text-align: center; /* Centraliza o texto horizontalmente */
+  justify-content: center; /* Centraliza os itens verticalmente */
+}
+
+/* Estilos para o ícone dentro de cada item da playlist */
+.p_musicas i {
+  cursor: pointer; /* Define o cursor como ponteiro para indicar interatividade */
+  margin-top: 25px; /* Adiciona margem superior de 25 pixels */
+  margin-left: 100px; /* Adiciona margem à esquerda de 100 pixels */
+}
+
+/* Estilos para a responsividade em telas pequenas (máximo de 426 pixels) */
+@media screen and (max-width: 426px) {
+  #section {
+    display: block; /* Altera o modelo de layout para bloco */
+    margin-left: 0; /* Remove a margem à esquerda */
   }
-  @media screen and (max-width: 426px){
-  
-    #section{
-      display:block;
-      margin-left: 0;
-    }
-    .playlist{
-      margin: 0;
-      margin-top: 0;
-      width: 100%;
-    }
-    .p_arte{
-      height: 100px;
-      width: 100px;
-    }
-    .p_titulo{
-      padding: 1px;
-      font-size: 1rem;
-      margin-top: 0;
-      width: 50px;
-    }
+  .playlist {
+    margin: 0; /* Remove a margem ao redor da playlist */
+    margin-top: 0; /* Remove a margem superior */
+    width: 100%; /* Define a largura como 100% para ocupar toda a largura da tela */
   }
+  .p_arte {
+    height: 100px; /* Mantém a altura da imagem em 100 pixels */
+    width: 100px; /* Mantém a largura da imagem em 100 pixels */
+  }
+  .p_titulo {
+    padding: 1px; /* Adiciona um pequeno preenchimento interno */
+    font-size: 1rem; /* Define o tamanho da fonte como 1 rem */
+    margin-top: 0; /* Remove a margem superior */
+    width: 50px; /* Define uma largura menor para o título */
+  }
+}
