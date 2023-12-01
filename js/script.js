@@ -31,12 +31,73 @@ const lista_musica = [
     // Cada objeto na lista representa uma música
     // Cada música tem uma imagem (img), um arquivo de música (music), um nome (name) e um artista (artist)
     // Adicione mais músicas conforme necessário
-    // ...
+    {
+        img: './src/cover.jpg',
+        name: 'To the Hellfire',
+        artist: "Lorna Shore",
+        music: "./src/To the Hellfire.mp3",
+      },
+      {
+        img: './src/cover.jpg',
+        music: "./src/Of the Abyss.mp3",
+        name: "Of the Abyss",
+        artist: "Lorna Shore",
+      },
+      {
+          img: './src/cover.jpg',
+          music: "./src/And I Return to Nothingness.mp3",
+          name: "And I Return to Nothingness",
+          artist: "Lorna Shore",
+      },
+      {
+        img: './src/cover2.jpg',
+        music: "./src/Apotheosis.mp3",
+        name: "Apotheosis",
+        artist: "Lorna Shore",
+      },
+  
+      {
+          img: './src/cover2.jpg',
+          music: "./src/Cursed to Die.mp3",
+          name: "Cursed to Die",
+          artist: "Lorna Shore",
+      },
+      {
+          img: './src/cover2.jpg',
+          music: "./src/Pain Remains I Dancing Like Flames.mp3",
+          name: "Pain Remains I Dancing Like Flames",
+          artist: "Lorna Shore",
+      },
+      {
+          img: './src/cover2.jpg',
+          music: "./src/Pain Remains II After All I've Done, I'll Disappear.mp3",
+          name: "Pain Remains II After All I've Done, I'll Disappear",
+          artist: "Lorna Shore",
+      },
+      {
+          img: './src/cover2.jpg',
+          music: "./src/Pain Remains III In a Sea of Fire.mp3",
+          name: "Pain Remains III In a Sea of Fire",
+          artist: "Lorna Shore",
+      },
+      {
+          img: './src/cover2.jpg',
+          music: "./src/Soulless Existence.mp3",
+          name: "Soulless Existence",
+          artist: "Lorna Shore",
+      },
+      {
+          img: './src/cover2.jpg',
+          music: "./src/SunEater.mp3",
+          name: "Sun/Eater",
+          artist: "Lorna Shore",
+      },
+   
 ];
 
 // Carrega a faixa inicial
 CarregarFaixa(track_index);
-
+Ptrack(track_index);
 // Função para carregar uma faixa
 function CarregarFaixa(track_index){
     clearInterval(updateTimer); // Limpa o temporizador atual
@@ -63,7 +124,6 @@ function Ptrack(){
 
     // Loop através da lista de músicas
     for (let i = 0; i < lista_musica.length; i++) {
-        let musicP = i; // Índice da música atual
         // Cria o HTML para a música atual
         let Html = ` <div class="p_musicas">
         <div class="p_arte" style="background-image: url(${lista_musica[i].img})" </div></div> 
