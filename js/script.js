@@ -26,6 +26,7 @@ let isPlaying = false; // Indica se a música está sendo reproduzida ou não
 let isRandom = false; // Indica se a reprodução aleatória está ativada ou não
 let updateTimer; // Temporizador para atualizar a interface do usuário
 
+
 // Lista de músicas
 const lista_musica = [ 
     // Cada objeto na lista representa uma música
@@ -121,7 +122,7 @@ function CarregarFaixa(track_index){
 // Função para criar a lista de reprodução na interface do usuário
 function Ptrack(){
     let playlist = document.querySelector('.playlist'); // Elemento que contém a lista de reprodução
-
+    
     // Loop através da lista de músicas
     for (let i = 0; i < lista_musica.length; i++) {
         // Cria o HTML para a música atual
@@ -131,13 +132,19 @@ function Ptrack(){
             <div class="p_titulo">${lista_musica[i].name}</div> 
             <div class="p_artista">${lista_musica[i].artist}</div> 
             </div> 
-            <div class="p_botao"><i class="fa fa-play-circle fa-3x" id="p_play" onclick=escolheTrack()></i></div> </div>`;
-                   
+            <div class="p_botao"><i class="fa fa-play-circle fa-3x" id="p_play_${i}" onclick="escolheTrack(${i})"></i></div>`;        
         // Adiciona a música atual à lista de reprodução na interface do usuário
         playlist.insertAdjacentHTML("beforeend",Html);
+        
     };
+    ;
 }
 
+function escolheTrack(index){
+   curr_track.src = lista_musica[index].music;
+   curr_track.load();
+   CarregarFaixa();
+}
 // Função para resetar o estado atual
 function reset(){
     curr_time.textContent = "00:00"; // Reseta o tempo atual

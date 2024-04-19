@@ -5,7 +5,9 @@ body {
   font-weight: bold; /* Define o peso da fonte como negrito */
   color: white; /* Define a cor do texto como branco */
 }
-
+.aa{
+  display: none;
+}
 /* Define estilos para a seção principal */
 #section {
   display: flex; /* Utiliza o modelo de layout flexível */
@@ -335,4 +337,5 @@ i, i.fa-play-circle, i.fa-pause-circle, i.fa-step-forward, i.fa-step-backward, p
     margin-top: 0; /* Remove a margem superior */
     width: 50px; /* Define uma largura menor para o título */
   }
+
 }
